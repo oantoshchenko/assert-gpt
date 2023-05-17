@@ -12,11 +12,33 @@ npm install
 node index.js
 ```
 
+## What it does
 The script will output the following:
+
+For input 
+```js
+let expected = "This plan allows you to post 100 posts per month.";
+let actual = "Our new amazing plan lets you post hundred posts every month.";
+let result = await compareText(expected, actual);
+```
+Will output:
 ```
 Should pass: { result: true }
+```
+
+For input 
+```js
+expected = "This plan allows you to post 100 posts per month.";
+actual = "Our new amazing plan lets you post hundred and fifty posts every month.";
+result = await compareText(expected, actual);
+```
+Will output:
+```
 Should fail: {
   result: false,
   reason: 'The number of posts allowed per month is different.'
 }
 ```
+
+With the return value being an object, you can easily use it in your test framework of choice. 
+You also can create a custom assert and make this approach a first-class citizen in your tests. 

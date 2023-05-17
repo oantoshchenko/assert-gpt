@@ -1,4 +1,5 @@
-import { Configuration, OpenAIApi } from "openai";
+import {Configuration, OpenAIApi} from "openai";
+
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
 });
@@ -26,8 +27,7 @@ a: <${actual}>
 b: <${expected}> 
 Only return JSON, nothing else.`;
     const responseContent = await callOpenAI(prompt);
-    const result = JSON.parse(responseContent);
-    return result;
+    return JSON.parse(responseContent);
 }
 
 // Pass
