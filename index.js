@@ -21,8 +21,8 @@ async function callOpenAI(prompt) {
 
 async function compareText(expected, actual) {
     const prompt = `Given two pieces of text wrapped in <>, where text a has to describe the same thing as text b.
-If it does, return json with a key of "result" and a value of "true".
-If it does not, return json with a key of "result" and a value of "false" and a key of "reason" and a value of the reason why it does not match.
+If it does, return json with a key of "equal" and a value of "true".
+If it does not, return json with a key of "equal" and a value of "false" and a key of "reason" and a value of the reason why it does not match.
 a: <${actual}>
 b: <${expected}> 
 Only return JSON, nothing else.`;

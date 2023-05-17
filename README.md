@@ -23,7 +23,7 @@ let result = await compareText(expected, actual);
 ```
 Will output:
 ```
-Should pass: { result: true }
+Should pass: { equal: true }
 ```
 
 For input 
@@ -35,7 +35,7 @@ result = await compareText(expected, actual);
 Will output:
 ```
 Should fail: {
-  result: false,
+  equal: false,
   reason: 'The number of posts allowed per month is different.'
 }
 ```
